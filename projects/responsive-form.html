@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A responsive form designed and coded by Bravo, Joshua Frederick A.">
+        <title>Responsive Form | Bravo's Project</title>
+        <style>
+        @import url("https://fonts.googleapis.com/css?family=Saira:900,400");
+            *{
+                box-sizing: border-box;
+                font-family: Saira;
+                padding: 0;
+                margin: 0;
+            }
+            header, footer{
+                padding: 10px;
+                text-align: center;
+                background: linear-gradient(to bottom, #222225, #111115);
+                color: #cfcfcf;
+            }
+            header{
+                border-bottom: 2px solid #cfcfcf;
+            }
+            footer{
+                border-top: 2px solid #cfcfcf;
+            }
+            fieldset{
+                padding: 14px;
+                box-shadow: 1px 1px 3px 1px #000;
+                border: 3px solid teal;
+                background: linear-gradient(to bottom, #222225, #111115);
+            }
+            form{
+                display: grid;
+                gap: 14px;
+                background: #333335;
+                color: #cfcfcf;
+                display: grid;
+                padding: 14px;
+                width: 100%;
+            }
+            .wrap{
+                display: grid;
+                gap: 14px;
+            }
+            form input{
+                width: 100%;
+                padding: 8px;
+                outline: none;
+                border: none;
+                border-bottom: 3px solid teal;
+            }
+            .name, .contact, .father, .mother, .spouse, .children{
+                grid-template-columns: auto auto;
+                display: grid;
+                margin-top: 14px;
+                gap: 4px;
+            }
+            .birthay, .place-of-birth{
+                margin-top: 14px;
+            }
+            h4, label{
+                padding: 8px 0px 8px;
+            }
+            @media screen and (min-width: 720px){
+                .wrap{
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    justify-content: space-evenly;
+                    gap: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>PERSONAL DATA SHEET</h1>
+        </header>
+        <main>
+            <form>
+                <div class="wrap">
+                <fieldset>
+                    <legend>I. PERSONAL INFORMATION</legend>
+                <div class="name">
+                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Middle Name">
+                    <input type="text" placeholder="Suffix (Jr, Sr, etc.)">
+                </div>
+                <div class="address">
+                    <h4>Residential Adrress</h5>
+                    <input style="width:100%;" type="text" placeholder="House # / Street / Barangay / City/Town / Province / Zip Code">
+                </div>
+                <div class="gender">
+                    <h4>Gender</h4>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Male">Male</label>
+                    <br>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Female">Female</label>
+                </div>
+                <div class="birthay">
+                    <label for="Your Birthday">Your Birthday</label>
+                    <input type="date" value="2023-03-13">
+                </div>
+                <div class="place-of-birth">
+                    <label for="Place of Birth">Place of Birth</label>
+                    <input type="text" placeholder="Pangasinan Philippines">
+                </div>
+                <div class="civil-status">
+                    <h4>Civil Status</h4>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Single">Single</label>
+                    <br>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Single">Married</label>
+                    <br>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Single">Separated</label>
+                    <br>
+                    <input type="checkbox" style="width:auto;">
+                    <label for="Single">Widowed</label>
+                </div>
+                <div class="contact">
+                    <input type="number" placeholder="Cellphone Number">
+                    <input type="tel" placeholder="Telephone Number">
+                    <input type="text" placeholder="Citizenship">
+                    <input type="email" placeholder="Email">
+                </div>
+                </fieldset>
+                <fieldset>
+                    <legend>II. Family Background</legend>
+                    <div class="father">
+                    <input type="text" placeholder="Father's Name">
+                    <input type="text" placeholder="Complete Address">
+                    <input type="text" placeholder="Occupation">
+                    <input type="number" placeholder="Contact Number">
+                    </div>
+                    <div class="birthay">
+                    <label for="Father's Birthday">Father's Birthday</label>
+                    <input type="date" value="2023-03-13">
+                    </div>
+                    <div class="mother">
+                    <input type="text" placeholder="Mother's Name">
+                    <input type="text" placeholder="Complete Address">
+                    <input type="text" placeholder="Occupation">
+                    <input type="number" placeholder="Contact Number">
+                    </div>
+                    <div class="birthay">
+                    <label for="Mother's Birthday">Mother's Birthday</label>
+                    <input type="date" value="2023-03-13">
+                    </div>
+                    <div class="spouse">
+                    <input type="text" placeholder="Spouse's Name">
+                    <input type="text" placeholder="Complete Address">
+                    <input type="text" placeholder="Occupation">
+                    <input type="number" placeholder="Contact Number">
+                    </div>
+                    <div class="birthay">
+                    <label for="Spouse's Birthday">Spouse's Birthday</label>
+                    <input type="date" value="2023-03-13">
+                    </div>
+                </fieldset>
+                </div>
+                <fieldset>
+                    <legend>Name of Children</legend>
+                    <div class="children">
+                    <input type="text" placeholder="Children's Name">
+                    <input type="text" placeholder="Children's Name">
+                    <input type="text" placeholder="Children's Name">
+                    <input type="text" placeholder="Children's Name">
+                    <input type="text" placeholder="Children's Name">
+                    <input type="text" placeholder="Children's Name">
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <h5>BRAVO'S PROJECT</h5>
+        </footer>
+    </body>
+</html>

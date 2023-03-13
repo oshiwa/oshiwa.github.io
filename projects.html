@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A compilation of projects designed and coded by Bravo.">
+        <title>Projects of Bravo</title>
+        <style>
+        @import url("https://fonts.googleapis.com/css?family=Saira:900,400");
+            *{
+                box-sizing: border-box;
+                font-family: Saira;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            a{
+                text-decoration: none;
+                color: #cfcfcf;
+            }
+            body{
+                background: #333335;
+            }
+            header h1, footer h5{
+                padding: 10px;
+                text-align: center;
+                background: linear-gradient(to left, #222225, #111115);
+                color: #cfcfcf;
+            }
+            header{
+                border-bottom: 2px solid #fff;
+                margin-bottom: 24px;
+            }
+            footer{
+                border-top: 2px solid #fff;
+                margin-top: 24px;
+            }
+            main ul{
+                display: grid;
+                padding: 14px;
+                gap: 14px;
+            }
+            main ul li{
+                background: linear-gradient(to left, #222225, #111115);
+                transition: all .3s ease-in;
+            }
+            main ul li:hover{
+                transform: scale(1.01);
+                box-shadow: 1px 1px 3px 1px #222225;
+            }
+            .thumbnail{
+                max-height: 300px;
+                overflow: hidden;
+            }
+            .thumbnail img{
+                width: 100%;
+                height: auto;
+                padding: 4px;
+            }
+            .title h3{
+                padding: 10px;
+                text-align: center;
+                border-top: 2px solid #cfcfcf;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+            <h1>BRAVO'S PROJECTS</h1>
+            </a>
+        </header>
+        <main>
+            <ul>
+                <li>
+                    <a href="projects/responsive-form.html">
+                    <div class="thumbnail">
+                        <img src="images/responsive-form.jpg">
+                    </div>
+                    <div class="title">
+                        <h3>Responsive Form</h3>
+                    </div>
+                    </a>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <h5>© BRAVO</h5>
+        </footer>
+    </body>
+</html>

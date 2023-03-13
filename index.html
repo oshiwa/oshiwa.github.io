@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=.85">
+        <meta name="description" content="Bravo's Portfolio">
+        <title>Bravo's Portfolio</title>
+        <style>
+        @import url("https://fonts.googleapis.com/css?family=Saira:900,400");
+            *{
+                box-sizing: border-box;
+                font-family: Saira;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            img{
+                width: 100%;
+            }
+            a{
+                text-decoration: none;
+                color: cyan;
+            }
+            button{
+                outline: none;
+                border: none;
+                color: #fff;
+                box-shadow: 1px 1px 3px 1px #111;
+                background: linear-gradient(to left, navy, darkblue);
+            }
+            header{
+                background: linear-gradient(to left, #222225, #333335);
+                box-shadow: 1px 1px 3px 1px #aaa;
+                padding: 10px;
+                color: #fff;
+                margin-bottom: 24px;
+                text-align: center;
+            }
+            .wrapper{
+                display: grid;
+                grid-template-columns: 40% 60%;
+                box-shadow: 1px 1px 3px 1px #aaa;
+            }
+            .profile{
+                padding: 8px;
+                background: linear-gradient(to left, #222225, #333335);
+                height: 100%;
+            }
+            .profile-container{
+                height: 175px;
+                width: 175px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin: auto;
+                margin-bottom: 24px;
+                margin-top: 24px;
+            }
+            .about{
+                margin-bottom: 24px;
+            }
+            .about h2, .contact h2, .skills h2, .projects h2, .form h2{
+                border-bottom: 1px solid #fff;
+                text-align: justify;
+                color: #fff;
+            }
+            .about h4{
+                text-align: center;
+                color: #fff;
+            }
+            .contact{
+                margin-bottom: 24px;
+            }
+            .contact ul{
+                width: 100%;
+                display: grid;
+                gap: 10px;
+                margin-top: 6px;
+            }
+            .contact li button{
+                width: 100%;
+            }
+            .contact ul li button a{
+                display: grid;
+                width: 100%;
+                padding: 6px;
+                color: #fff;
+                box-shadow: 1px 1px 2px 1px #111;
+            }
+            .skills{
+                margin-bottom: 24px;
+            }
+            .skills ul li{
+                padding: 8px 10px;
+                color: #fff;
+            }
+            .skills ul li:before{
+                content: "» ";
+            }
+            .skills h3{
+                padding: 4px;
+                width: 70%;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                background: #fff;
+                margin-top: 14px;
+                display: inline-block;
+            }
+            .projects{
+                margin-bottom: 24px;
+            }
+            .projects button{
+                width: 90%;
+                margin: auto;
+                margin-top: 12px;
+                display: grid;
+            }
+            .projects button a{
+                display: grid;
+                box-shadow: 1px 1px 3px 1px #111;
+                padding: 6px;
+                color: #fff;
+            }
+            .info{
+                padding: 8px;
+            }
+            .info h2{
+                background: linear-gradient(to left, #222225, #333335);
+                box-shadow: 1px 1px 3px 1px #aaa;
+                padding: 2px 14px;
+                color: #fff;
+                margin-top: 10px;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+            .info h3{
+                padding: 8px 8px;
+                text-decoration: underline;
+            }
+            .info p{
+                padding: 12px;
+                text-align: justify;
+            }
+            footer{
+                background: linear-gradient(to left, #222225, #333335);
+                box-shadow: 1px 1px 3px 1px #000;
+                margin-top: 24px;
+            }
+            footer form{
+                display: grid;
+                gap: 4px;
+                padding: 14px;
+            }
+            footer .form h2{
+                padding: 10px;
+                text-align: center;
+            }
+            footer form label{
+                color: #fff;
+            }
+            footer form input, footer form textarea, footer form button{
+                padding: 6px;
+                font-size: 14px;
+            }
+            footer h5{
+                text-align: center;
+                background: linear-gradient(to left, #1111115, #000005);
+                border-top: 1px solid #fff;
+                color: #fff;
+                padding: 12px;
+            }
+            @media screen and (min-width: 720px){
+                .about h2, .contact h2, .skills h2, .projects h2, .form h2{
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>BRAVO'S PORTFOLIO</h1>
+        </header>
+        <main>
+            <div class="wrapper">
+            <section class="row1">
+            <div class="profile">
+                <div class="about">
+                <div class="profile-container">
+                <img src="profile.jpg">
+                </div>
+                <h2>Bravo, Joshua Frederick A.</h2>
+                <h4>Front-end Developer</h4>
+                </div>
+                <div class="contact">
+                    <h2>Contact Details</h2>
+                    <ul>
+                        <li><button><a href="https://www.facebook.com/bravo.joshuafrederick">Facebook</a></button></li>
+                        <li><button><a href="https://instagram.com/iokuarieti">Instagram</a></button></li>
+                        <li><button><a href="https://twitter.com/shuuaaaa_">Twitter</a></button></li>
+                        <li><button><a href="https://www.linkedin.com/in/joshua-frederick-bravo-8212b3225">Linkedin</a></button></li>
+                        <li><button><a href="https://github.com/xoshiwa">Github</a></button></li>
+                        <li><button><a href="mailto:joshuabravo0180@gmail.com">Email</a></button></li>
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h2>Relevant Skills</h2>
+                    <ul>
+                        <h3>Hard Skills</h3>
+                        <li>Web Design</li>
+                        <li>HTML5, CSS3, JS</li>
+                        <li>Frontend Dev</li>
+                    </ul>
+                    <ul>
+                        <h3>Soft Skills</h3>
+                        <li>Adaptability</li>
+                        <li>Resourcefulness</li>
+                        <li>Openness to criticism</li>
+                    </ul>
+                </div>
+                <div class="projects">
+                    <h2>My Projects</h2>
+                    <button><a href="projects.html">See Projects</a></button>
+                </div>
+            </div>
+            </section>
+            <section class="row2">
+            <div class="info">
+                <h2>About Me</h2>
+                <p>I am Joshua Frederick Bravo taking Bachelor of Science in Information Technology and currently in 2nd year.</p>
+                <h2>Home Address</h2>
+                <p>#397 Baguinay Manaoag Pangasinan</p>
+                <h2>Birth Date</h2>
+                <p>September 18 2002</p>
+                <h2>Education</h2>
+                <h3>Elementary</h3>
+                <p>Baguinay Elementary School</p>
+                <h3>Secondary</h3>
+                <p>Baguinay National High School</p>
+                <h3>Tertiary</h3>
+                <p>Urdaneta City University</p>
+                <h2>Work Experience</h2>
+                <p>Currently none.</p>
+                <h2>Obejctives</h2>
+                <p>To obtain a challenging position as a front-end developer from a beginner welcoming company.</p>
+                <h2>Awards and Honors</h2>
+                <p>I'm a consistent honor student from elementary to high school. I'm also awarded as the most courteous and most behaved student.</p>
+            </div>
+            </section>
+            </div>
+        </main>
+        <footer>
+            <div class="form">
+                    <h2>Contact Form</h2>
+                    <form action="https://formsubmit.co/oshiwabusiness@gmail.com" method="POST">
+                        <label for="Email">Email:</label>
+                        <input type="email" name="Email" placeholder="youremail@gmail.com" required="required">
+                        <label for="Message">Message:</label>
+                        <textarea type="text" name="Message" placeholder="What do you want to say?" rows="8" required="required"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+            </div>
+            <h5>© BRAVO</h5>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Grenze+Gotisch:900,400">
+        <script src="https://kit.fontawesome.com/05b994aae7.js" crossorigin="anonymous"></script>
+        <style>
+            *{
+                box-sizing: border-box;
+                font-family: Grenze Gotisch;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+            body{
+                color: #fff;
+                background: #111115;
+            }
+            button{
+                outline: none;
+                border: none;
+            }
+            header{
+                padding: 12px;
+                background: linear-gradient(to left, #222225, #333335);
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #fff;
+                margin-bottom: 24px;
+            }
+            header button{
+                width: 14%;
+                font-size: 28px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                background: linear-gradient(to left, navy, darkblue);
+                color: #fff;
+            }
+            .profile{
+                display: grid;
+                background: linear-gradient(to left, #222225, #333335);
+                width: 100%;
+                margin: auto;
+                padding: 20px;
+                box-shadow: 1px 1px 3px 1px #000;
+                margin-bottom: 12px;
+            }
+            .profile h2{
+                padding: 10px;
+                text-align: center;
+                display: inline-block;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                background: #fff;
+                color: #000;
+            }
+            .profile-container{
+                height: 250px;
+                width: 250px;
+                overflow: hidden;
+                margin: auto;
+                border-radius: 50%;
+                margin-top: 14px;
+                margin-bottom: 24px;
+            }
+            .contact h2{
+                padding: 10px;
+                text-align: center;
+                background: linear-gradient(to left, #222225, #333335);
+                border-bottom: 1px solid #fff;
+            }
+            .contact-details{
+                background: linear-gradient(to left, #222225, #333335);
+            }
+            .contact-details ul{
+                display: grid;
+                padding: 12px;
+                gap: 12px;
+            }
+            .contact-details li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+            .contact-details li a{
+                width: 100%;
+            }
+            .contact-details li a button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 6px;
+                font-size: 16px;
+                background: linear-gradient(to left, #fff, #eee);
+                color: #000;
+                box-shadow: 1px 1px 3px 1px #000;
+                border-radius: 5px;
+            }
+            .contact-details #icons{
+                margin-right: 10px;
+            }
+            footer{
+                background: linear-gradient(to left, #222225, #333335);
+                padding: 10px;
+                text-align: center;
+                border-top: 1px solid #fff;
+                margin-top: 24px;
+            }
+            .menu{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(to left, navy, darkblue);
+                padding: 20px;
+                box-shadow: 1px 1px 3px 1px #000;
+                width: 75%;
+                display: none;
+                animation: fade .5s ease-in;
+                border-radius: 5px;
+                transition: all .3s ease-in;
+            }
+            .menu ul{
+                display: grid;
+                gap: 14px;
+                width: 100%;
+            }
+            .menu ul li a{
+                display: grid;
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+                color: #fff;
+                text-decoration: none;
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+            }
+            @keyframes fade{
+                from{
+                    top: -300px;
+                    opacity: 0;
+                }
+                to{
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+        </style>
+    <body>
+        <header>
+            <h1>Bravo's Portfolio</h1>
+            <button id="showmenu"><i id="icons"class="fa-solid fa-bars"></i></button>
+        </header>
+        <main>
+            <section class="profile">
+                <div class="profile-container">
+                <img src="profile.jpg">
+                </div>
+                <h2>Bravo, Joshua Frederick A.</h2>
+            </section>
+            <section class="contact">
+                <h2>How To Contact Me?</h2>
+            </section>
+            <section class="contact-details">
+                <ul>
+                <li>
+                    <a href="https://www.facebook.com/bravo.joshuafrederick">
+                    <button><i id="icons"class="fa-brands fa-square-facebook"></i> FACEBOOK</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/shuanary_">
+                    <button><i id="icons"class="fa-brands fa-square-instagram"></i> INSTAGRAM</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/shuuaaaa_">
+                    <button><i id="icons"class="fa-brands fa-square-twitter"></i> TWITTER</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joshua-frederick-bravo-8212b3225">
+                    <button><i id="icons"class="fa-brands fa-linkedin"></i> LINKEDIN</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/oshiwa">
+                    <button><i id="icons"class="fa-brands fa-github"></i> GITHUB</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ko-fi.com/oshiwa">
+                    <button><i id="icons"class="fa-solid fa-mug-saucer"></i> KO-FI</button>
+                    </a>
+                </li>
+            </ul>
+            </section>
+        </main>
+        <footer>
+            <h5>© BRAVO</h5>
+            <section class="menu">
+                <ul>
+                    <li><a href="resume.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </section>
+        </footer>
+        <script>
+            document.querySelector("#showmenu").addEventListener('click', function(){
+                let menu = document.querySelector(".menu")
+                if(menu.style.display === "block"){
+                    menu.style.display = "none";
+                }else{
+                    menu.style.display = "block";
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -57,7 +57,6 @@
             }
             .address{
                 display: grid;
-                grid-template-columns: auto auto;
                 gap: 4px;
             }
             .name, .contact, .father, .mother, .spouse, .children{
@@ -78,6 +77,10 @@
                     grid-template-columns: 50% 50%;
                     justify-content: space-evenly;
                     gap: 14px;
+                }
+                .address-int{
+                    display: grid;
+                    grid-template-columns: auto auto;
                 }
             }
         </style>
@@ -102,12 +105,14 @@
 <!--
                     <input style="width:100%;" type="text" placeholder="House # / Street / Barangay / City/Town / Province / Zip Code">
 -->
+           <div class="address-int">
                     <input type="text" placeholder="House Number">
                     <input type="text" placeholder="Street">
                     <input type="text" placeholder="Barangay">
                     <input type="text" placeholder="City/Town">
                     <input type="text" placeholder="Province">
                     <input type="text" placeholder="Zip Code">
+          </div>
 <!--
                     <input type="text" placeholder="Middle Name">
                     <input type="text" placeholder="Suffix (Jr, Sr, etc.)">

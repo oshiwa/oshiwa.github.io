@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" oncontextmenu="return false">
+<!DOCTYPE HTML>
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=.85">
-        <meta name="description" content="Bravo's Portfolio">
-        <title>Bravo's Portfolio</title>
+        <meta name="viewport" content="width=device-width, inital-scale=1">
         <style>
-        @import url("https://fonts.googleapis.com/css?family=Saira:900,400");
+        @import url('https://fonts.googleapis.com/css?family=Saira:600');
             *{
                 box-sizing: border-box;
                 font-family: Saira;
@@ -16,297 +14,598 @@
             }
             img{
                 width: 100%;
+                height: auto;
             }
             a{
                 text-decoration: none;
-                color: cyan;
             }
             body{
-                 width: 90%;
-                 margin: auto;
-            }
-            button{
-                outline: none;
-                border: none;
-                color: #fff;
-                box-shadow: 1px 1px 3px 1px #111;
-                background: linear-gradient(to left, navy, darkblue);
+                background: #FAF9F6;
             }
             header{
-                background: linear-gradient(to left, #222225, #333335);
-                box-shadow: 1px 1px 3px 1px #aaa;
-                padding: 10px;
+                display: grid;
+                background: #FFACAC;
+            }
+            header img{
+                display: block;
+                padding: 24px;
+                height: 250px;
+                width: 300px;
+                margin: auto;
+            }
+            nav{
+                border-top: 4px solid #FFBFA9;
+            }
+            nav ul{
+                display: flex;
+                background: #D14D72;
+            }
+            nav ul li{
+                display: flex;
+                width: 100%;
+                text-align: center;
+                align-items: center;
+            }
+            nav ul li a{
+                width: 100%;
+                padding: 14px;
+                font-size: 16px;
+                text-align: center;
                 color: #fff;
-                margin-bottom: 24px;
+            }
+            nav ul li a:hover{
+                background: #FFBFA9;
+            }
+            .icon{
+                margin-right: 4px;
+                color: #FAF9F6;
+            }
+            .side-nav{
+                display: flex;
+                flex-direction: column;
+                z-index: 5;
+                position: fixed;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+            .side-nav ul{
+                display: flex;
+                flex-direction: column;
+            }
+            .hero{
+                width: 100%;
+                background: #fff;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 1px 1px 2px 1px silver;
+                background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 70%;
+                display: grid;
+            }
+            .tagline{
+                color: #fff;
+                font-size: 2.5rem;
+                text-shadow: 1px 1px #FFBFA9;
                 text-align: center;
             }
-            header h1{
-                padding-bottom: 10px;
-            }
-            .wrapper{
+            .order-button{
                 display: grid;
-                grid-template-columns: 40% 60%;
-                box-shadow: 1px 1px 3px 1px #aaa;
+                justify-content: center;
+                align-items: center;
             }
-            .profile{
+            .order-button a{
+                text-decoration: none;
+                color: #fff;
+                padding: 14px;
+                background: #D14D72;
+                border-bottom: 2px solid #FFBFA9;
+                font-size: 20px;
+                font-style: bold;
+                text-align: center;
+                width: 300px;
+                border-radius: 15px;
+            }
+            .order-button a:hover{
+                border-bottom: 2px solid #D14D72;
+                background: #FFBFA9;
+            }
+            main ul li{
+                transition: all .3s ease-in;
+                border: 3px solid #FFF;
+            }
+            main ul li:hover{
+                transform: scale(.95);
+                border: 3px solid #FFBFA9;
+            }
+            .almusal{
+                padding: 14px;
+                box-shadow: 1px 1px 5px 1px silver;
+                margin: 14px;
+                border-radius: 24px;
+            }
+            .almusal h2{
                 padding: 8px;
-                background: linear-gradient(to left, #222225, #333335);
-                height: 100%;
-            }
-            .profile-container{
-                height: 250px;
+                padding-left: 24px;
+                border-bottom-left-radius: 24px;
+                border-top-right-radius: 24px;
                 width: 250px;
+                margin-bottom: 8px;
+                display: inline-block;
+                background: #D14D72;
+                color: #FAF9F6;
+                border-bottom: 2px solid #FFBFA9;
+                transform: skew(-24deg);
+            }
+            .almusal ul{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                justify-content: space-evenly;
+                align-content: space-evenly;
+                align-items: space-evenly;
+                gap: 8px;
+            }
+            .almusal ul li{
+                background: #FFACAC;
+                border-radius: 15px;
+                display: grid;
+                padding: 14px;
+            }
+            .almusal ul li  h3{
+                padding: 8px 0px 8px;
+            }
+            .food-img{
+                width: 98px;
+                height: 98px;
                 overflow: hidden;
                 border-radius: 50%;
                 margin: auto;
-                margin-bottom: 24px;
-                margin-top: 24px;
+            }
+            .lutong-ulam{
+                padding: 14px;
+                box-shadow: 1px 1px 5px 1px silver;
+                margin: 14px;
+                border-radius: 24px;
+            }
+            .lutong-ulam h2{
+                padding: 8px;
+                border-bottom-left-radius: 24px;
+                border-top-right-radius: 24px;
+                padding-left: 24px;
+                margin: auto;
+                width: 250px;
+                margin-left: 14px;
+                margin-bottom: 8px;
+                display: inline-block;
+                background: #D14D72;
+                color: #FAF9F6;
+                border-bottom: 2px solid #FFBFA9;
+                transform: skew(-24deg);
+            }
+            .lutong-ulam ul{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                justify-content: space-evenly;
+                align-content: space-evenly;
+                align-items: space-evenly;
+                gap: 8px;
+            }
+            .lutong-ulam ul li{
+                background: #FFACAC;
+                display: grid;
+                padding: 14px;
+                border-radius: 15px;
+            }
+            .lutong-ulam ul li  h3{
+                padding: 8px 0px 8px;
+            }
+            .panghimagas{
+                padding: 14px;
+                box-shadow: 1px 1px 5px 1px silver;
+                margin: 14px;
+                border-radius: 24px;
+            }
+            .panghimagas h2{
+                padding: 8px;
+                border-bottom-left-radius: 24px;
+                border-top-right-radius: 24px;
+                padding-left: 24px;
+                margin: auto;
+                width: 250px;
+                margin-left: 14px;
+                margin-bottom: 8px;
+                display: inline-block;
+                background: #D14D72;
+                color: #FAF9F6;
+                border-bottom: 2px solid #FFBFA9;
+                transform: skew(-24deg);
+            }
+            .panghimagas ul{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                justify-content: space-evenly;
+                align-content: space-evenly;
+                align-items: space-evenly;
+                gap: 8px;
+            }
+            .panghimagas ul li{
+                background: #FFACAC;
+                display: grid;
+                padding: 14px;
+                border-radius: 15px;
+            }
+            .panghimagas ul li  h3{
+                padding: 8px 0px 8px;
+            }
+            .food-img{
+                width: 128px;
+                height: 128px;
+                overflow: hidden;
+                border-radius: 50%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: auto;
+            }
+            .buy{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px;
+                width: 100%;
+            }
+            .buy a{
+                background: #D14D72;
+                color: #FAF9F6;
+                padding: 4px 14px 4px 14px;
+                border-bottom: 2px solid #FFBFA9;
+                border-radius: 15px;
             }
             .about{
-                margin-bottom: 24px;
+                padding: 14px;
+                box-shadow: 1px 1px 5px 1px silver;
+                margin: 14px;
+                border-radius: 24px;
             }
-            .about h2, .contact h2, .skills h2, .projects h2, .form h2{
-                border-bottom: 1px solid #fff;
-                text-align: justify;
-                color: #fff;
-            }
-            .about h4{
+            .about h2{
+                padding: 14px;
                 text-align: center;
-                color: #fff;
+                background: #D14D72;
+                border-radius: 15px;
+                border-bottom: 2px solid #FFBFA9;
+                color: #FAF9F6;
+            }
+            .about img{
+                display: block;
+                padding: 14px;
+                margin: auto;
+            }
+            .about p{
+                padding: 14px;
+                border-left: 2px solid #FFBFA9;
+                border-right: 2px solid #FFBFA9;
+                background: silver;
+                border-radius: 15px;
+                font-size: 16px;
+                text-align: justify;
             }
             .contact{
-                margin-bottom: 24px;
+                padding: 14px;
+                box-shadow: 1px 1px 5px 1px silver;
+                margin: 14px;
+                border-radius: 24px;
             }
-            .contact ul{
-                width: 100%;
+            .contact h2{
+                padding: 14px;
+                text-align: center;
+                background: #D14D72;
+                border-radius: 15px;
+                border-bottom: 2px solid #FFBFA9;
+                color: #FAF9F6;
+            }
+            .contact form{
                 display: grid;
-                grid-template-columns: auto auto;
-                gap: 10px;
-                margin-top: 6px;
+                padding: 1px;
+                gap: 4px;
             }
-            .contact li button{
+            .contact form label{
+                border-radius: 15px;
+                padding: 4px 8px 4px 8px;
+            }
+            .contact form input, .contact form textarea{
+                font-size: 16px;
+                background: #FFACAC;
+                color: #FAF9F6;
+                border: 2px solid #FFF;
+                box-shadow: inset 0px -2px #FFBFA9;
+                transition: all .3s ease-in;
+                padding: 14px;
+                border-radius: 15px;
+                outline: none;
+            }
+            .contact form input:focus{
+                background: #FAF9F6;
+                color: #444445;
+                border: 2px dashed #FFBFA9;
+                box-shadow: none;
+            }
+            .contact form textarea:focus{
+                background: #FAF9F6;
+                color: #444445;
+                border: 2px dashed #FFBFA9;
+                box-shadow: none;
+            }
+            .order-modal-container{
+                display: none; //edit
+                padding: 24px;
                 width: 100%;
             }
-            .contact ul li button a{
-                display: grid;
-                width: 100%;
-                padding: 6px;
-                color: #fff;
-                box-shadow: 1px 1px 2px 1px #111;
-            }
-            .skills{
-                margin-bottom: 24px;
-            }
-            .skills ul li{
-                padding: 8px 10px;
-                color: #fff;
-            }
-            .skills ul li:before{
-                content: "» ";
-            }
-            .skills h3{
-                padding: 4px;
-                width: 70%;
-                border-top-left-radius: 15px;
-                border-bottom-right-radius: 15px;
-                background: #fff;
-                margin-top: 14px;
-                display: inline-block;
-            }
-            .projects{
-                margin-bottom: 24px;
-            }
-            .projects button{
-                width: 90%;
+            .order-modal-container img{
                 margin: auto;
-                margin-top: 12px;
-                display: grid;
+                padding: 24px;
+                height: 250px;
+                width: 300px;
             }
-            .projects button a{
-                display: grid;
-                box-shadow: 1px 1px 3px 1px #111;
-                padding: 6px;
-                color: #fff;
+            .order-modal-container h2{
+                font-size: 45px;
+                text-align: center;
+                background: #D14D72;
+                border-top: 2px ;
+                border-radius: 15px;
             }
-            .row{
+            .longsilog{
                 display: grid;
-                align-content: center;
-                align-items: center;
-            }
-            .info{
+                box-shadow: 1px 1px 5px 1px silver;
+                background: #FFACAC;
+                border-radius: 15px;
                 padding: 24px;
             }
-            .info h2{
-                background: linear-gradient(to left, #222225, #333335);
-                box-shadow: 1px 1px 3px 1px #aaa;
-                padding: 2px 14px;
-                color: #fff;
-                margin-top: 10px;
-                border-top-left-radius: 15px;
-                border-bottom-right-radius: 15px;
-            }
-            .info h3{
-                padding: 8px 8px;
-                text-decoration: underline;
-            }
-            .info p{
-                padding: 12px;
-                text-align: justify;
-            }
-            footer{
-                background: linear-gradient(to left, #222225, #333335);
-                box-shadow: 1px 1px 3px 1px #000;
-                margin-top: 24px;
-            }
-            footer form{
-                display: grid;
-                gap: 4px;
-                padding: 14px;
-            }
-            footer .form h2{
-                padding: 10px;
-                text-align: center;
-            }
-            footer form label{
-                color: #fff;
-            }
-            footer form input, footer form textarea, footer form button{
-                padding: 6px;
-                font-size: 14px;
-            }
-            footer h5{
-                text-align: center;
-                background: linear-gradient(to left, #1111115, #000005);
-                border-top: 1px solid #fff;
-                color: #fff;
-                padding: 12px;
-            }
-            .row2{
-                align-content: center;
-                align-items: center;
-                display: grid;
-            }
-            .nav ul{
+            .quantity{
                 display: flex;
-                padding: 6px;
-                border-bottom: 2px solid #fff;
-                border-top: 2px solid #fff;
             }
-            .nav ul li{
+            .quantity input{
                 width: 100%;
-                text-align: center;
             }
-            .nav ul li a{
-                display: flex;
-                padding: 8px;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                color: #fff;
-            }
-            .nav ul li a:hover{
-                background: teal;
-                color: #fff;
-            }
-            @media screen and (min-width: 720px){
-                .about h2, .contact h2, .skills h2, .projects h2, .form h2{
-                    text-align: center;
+            @media screen and (min-width:720px){
+                .two-column{
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    justify-content: space-evenly;
+                    align-content: space-evenly;
+                    align-items: space-evenly;
                 }
+                .panghimagas ul{
+                    grid-template-columns: 33.33% 33.33% 33.33%;
+                }
+                /*
+                .about{
+                    display: grid;
+                    align-content: space-around;
+                }
+                */
             }
         </style>
+        <script src="https://kit.fontawesome.com/05b994aae7.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <h1>BRAVO'S PORTFOLIO</h1>
-            <div class="nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-            </div>
+            <img src="images/logo.jpg" alt="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+                    <li><a href="#">
+                    <span class="icon"><i class="fa-solid fa-circle-question"></i></span>About Us</a></li>
+                    <li><a href="#"><span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>Login</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <div class="wrapper">
-            <section class="row1">
-            <div class="profile">
-                <div class="about">
-                <div class="profile-container">
-                <img src="profile.jpg">
+            <section class="hero">
+                <div class="tagline">
+                    <h2>Filipino Best Dishes In One Place</h2>
                 </div>
-                <h2>Bravo, Joshua Frederick A.</h2>
-                <h4>Front-end Developer</h4>
+                <div class="order-button">
+                    <a href="#forOrder">Order Now</a>
                 </div>
-                <div class="contact">
-                    <h2>Contact Details</h2>
-                    <ul>
-                        <li><button><a href="https://www.facebook.com/bravo.joshuafrederick">Facebook</a></button></li>
-                        <li><button><a href="https://instagram.com/iokuarieti">Instagram</a></button></li>
-                        <li><button><a href="https://twitter.com/shuuaaaa_">Twitter</a></button></li>
-                        <li><button><a href="https://www.linkedin.com/in/joshua-frederick-bravo-8212b3225">Linkedin</a></button></li>
-                        <li><button><a href="https://github.com/xoshiwa">Github</a></button></li>
-                        <li><button><a href="mailto:joshuabravo0180@gmail.com">Email</a></button></li>
-                    </ul>
-                </div>
-                <div class="skills">
-                    <h2>Relevant Skills</h2>
-                    <ul>
-                        <h3>Hard Skills</h3>
-                        <li>Web Design</li>
-                        <li>HTML5, CSS3, JS</li>
-                        <li>Frontend Dev</li>
-                    </ul>
-                    <ul>
-                        <h3>Soft Skills</h3>
-                        <li>Adaptability</li>
-                        <li>Resourcefulness</li>
-                        <li>Openness to criticism</li>
-                    </ul>
-                </div>
-                <div class="projects">
-                    <h2>My Projects</h2>
-                    <button><a href="projects.html">See Projects</a></button>
-                    <button><a href="contact.html">Contact</a></button>
-                </div>
-            </div>
             </section>
-            <section class="row2">
-            <div class="info">
-                <h2>About Me</h2>
-                <p>I am Joshua Frederick Bravo taking Bachelor of Science in Information Technology and currently in 2nd year.</p>
-                <h2>Home Address</h2>
-                <p>#397 Baguinay Manaoag Pangasinan</p>
-                <h2>Birth Date</h2>
-                <p>September 18 2002</p>
-                <h2>Education</h2>
-                <h3>Elementary</h3>
-                <p>Baguinay Elementary School</p>
-                <h3>Secondary</h3>
-                <p>Baguinay National High School</p>
-                <h3>Tertiary</h3>
-                <p>Urdaneta City University</p>
-                <h2>Work Experience</h2>
-                <p>Currently none.</p>
-                <h2>Obejctives</h2>
-                <p>To obtain a challenging position as a front-end developer from a beginner welcoming company.</p>
-                <h2>Awards and Honors</h2>
-                <p>I'm a consistent honor student from elementary to high school. I'm also awarded as the most courteous and most behaved student.</p>
+            <div class="two-column">
+            <section class="almusal" id="forOrder">
+                <h2>ALMUSAL</h2>
+                <ul>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/longsilog.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Longsilog</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-longsilog">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/topsilog.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Topsilog</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-topsilog">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/sulidong_almusal.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Sulidong Almusal</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-sulidong-almusal">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/bonsilog.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Bonsilog</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-bonsilog">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/hotsilog.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Hotsilog</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-hotsilog">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/almusal/tosilog.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Tosilog</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="javascript:void(0)" id="order-tosilog">Order</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="lutong-ulam">
+                <h2>LUTONG ULAM</h2>
+                <ul>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/menudo.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Menudo</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/pakbet.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Pakbet</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/giniling.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Giniling</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/chicken_curry.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Chicken Curry</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/adobo.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Adobo</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/lutong_ulam/dinakdakan.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Dinakdakan</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
             </div>
+            <section class="panghimagas">
+                <h2>PANGHIMAGAS</h2>
+                <ul>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/palitaw.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Palitaw</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/jelly_cake.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Jelly Cake</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/kutsinta.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Kutsinta</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/graham.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Graham</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/special_halo_halo.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Halo-Halo</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="food-img" style="background: url('images/panghimagas/leche_flan.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <h3>Leche Flan</h3>
+                        <div class="buy">
+                            <p>₱100</p>
+                            <a href="#">Order</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <div class="two-column">
+            <section class="about">
+                <h2>About Us</h2>
+                <img src="images/logo.jpg">
+                <p>Filipino food is a mixture of sweet, salty and sour flavors. Most Filipino dishes are heavy on meat like beef (baka), chicken (manok), pork (baboy), and ocassionally goat (kambing). Offal is also commonly eaten by Filipinos and forms the main ingredient of dishes like bopis, la paz bachoy and sisig.</p>
+            </section>
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <form action="" method="">
+                    <label for="Email">Email:</label>
+                    <input type="email" name="Email" placeholder="youremail@gmail.com" required="required">
+                    <label for="Message">Message:</label>
+                    <textarea name="Message" rows="12" placeholder="Message" required="required"></textarea>
+                    <input type="submit" value="Send Message" style="margin-top:8px;padding:14px">
+                </form>
             </section>
             </div>
         </main>
         <footer>
-            <div class="form">
-                    <h2>Contact Form</h2>
-                    <form action="https://formsubmit.co/xoshiwabusiness@gmail.com" method="POST">
-                        <label for="Email">Email:</label>
-                        <input type="email" name="Email" placeholder="youremail@gmail.com" required="required">
-                        <label for="Message">Message:</label>
-                        <textarea type="text" name="Message" placeholder="What do you want to say?" rows="8" required="required"></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
+            <div class="order-modal-container">
+                <div class="longsilog">
+                    <h2>Longsilog</h2>
+                        <img src="images/almusal/longsilog.jpg">
+                    <span class="quantity">
+                    <label for="Quantity">Quantity: </label>
+                    <input type="number" name="Quantity" value="1">
+                    </span>
+                    <button>Place Order</button>
+                </div>
             </div>
-            <h5>© BRAVO</h5>
         </footer>
     </body>
+    <script>
+        
+    </script>
 </html>

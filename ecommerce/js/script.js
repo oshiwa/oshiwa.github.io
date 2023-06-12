@@ -159,7 +159,7 @@
                         setTimeout(() => {
                             window.location.href = 'index.html';
                             window.location.reload(true);
-                        }, 2500);
+                        }, 1000);
                     });
                 });
 

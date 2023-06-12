@@ -157,7 +157,6 @@
                         document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = (error.message);
                         setTimeout(() => {
-                            window.location.href = 'index.html';
                             window.location.reload(true);
                         }, 1000);
                     });
@@ -167,13 +166,17 @@
             const logoutBtn = document.getElementById('logoutBtn');
             logoutBtn.addEventListener('click',
                 () => {
-                    window.location.reload();
+                    document.getElementById('message').style.display = 'grid';
+                        document.getElementById('message').textContent = 'Logged-out Successfully!';
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                            window.location.reload();
+                        }, 1000);
                     auth.signOut()
                     .catch(error => {
                         document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = (error.message);
                         setTimeout(() => {
-                            window.location.href = 'index.html';
                             window.location.reload(true);
                         }, 1000);
                     });
@@ -383,7 +386,7 @@
                         <span><strong>Date:</strong> ${new Date(order.timestamp).toLocaleString()}</span>
                         ${order.order
                         .map(item => `
-                        <div class="order-details" style="display:none;overflow:hidden;">
+                        <div class="order-details">
                         <span><strong>Item: </strong>${item.name}</span><span><strong>Quantity: </strong> ${item.quantity} </span>
                         </div>
                         `)

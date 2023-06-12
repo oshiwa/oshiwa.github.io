@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.75, user-scalable=no">
+    <title>Simple Store</title>
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Kanit:400");
+        *{
+            font-family: Kanit;
+            box-sizing: border-box;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #FEF9F6;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+        a{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button{
+            background: #E7CBCB;
+            border: 2px solid  #99627A!important;
+            cursor: pointer;
+            color: #000;
+            border: none;
+            outline: none;
+        }
+        header{
+            background: #C88EA7;
+            box-shadow: 1px 1px 3px 1px silver;
+        }
+        .logo{
+            display: grid;
+            margin: auto;
+            border-bottom: 4px solid #99627A;
+            padding: 24px;
+        }
+        .logo img{
+            height: 200px;
+            width: 275px;
+        }
+        nav{
+            border-bottom: 4px solid #99627A;
+            margin-bottom: 14px;
+            display: grid;
+            width: 100%;
+        }
+        nav ul{
+            display: flex;
+            width: 100%;
+        }
+        nav ul li{
+            display: flex;
+            width: 100%;
+            text-align: center;
+        }
+        nav ul li a{
+            padding: 14px;
+            width: 100%;
+            text-decoration: none;
+            color: #000;
+        }
+        #userProfile, .moreProductsForm{
+            display: none;
+        }
+        .product-container{
+            padding: 14px;
+            display: none;
+        }
+        .product-container h2{
+            text-align: center;
+            background: #C88EA7;
+            padding: 18px;
+            border-radius: 5px;
+            border: 2px solid #99627A;
+            text-transform: uppercase;
+            box-shadow: 1px 1px 3px 1px silver;
+            margin-bottom: 14px;
+            display: none;
+        }
+        #productListAlmusal{
+            display: none;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            padding: 8px;
+            gap: 14px;
+        }
+        #productListLutongUlam{
+            display: none;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            padding: 8px;
+            gap: 14px;
+        }
+        #productListPanghimagas{
+            display: none;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            padding: 8px;
+            gap: 14px;
+        }
+        #moreProducts{
+            display: none;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            padding: 8px;
+            gap: 14px;
+        }
+        #cart{
+            padding: 20px;
+            box-shadow: 1px 1px 3px 1px silver;
+            margin: 14px;
+            border-radius: 5px;
+        }
+        #cart h2{
+            text-align: center;
+            background: #C88EA7;
+            padding: 18px;
+            border-radius: 5px;
+            border: 2px solid #99627A;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        #cartItems{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            padding: 8px;
+            gap: 14px;
+        }
+        #orderItems{
+            display: none;
+            gap: 14px;
+        }
+        #orderHistory ul li{
+            display: grid;
+            row-gap: 4px;
+            background: #C88EA7;
+            border: 2px solid #99627A;
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .product{
+            color: #000;
+            background: #C88EA7;
+            box-shadow: 1px 1px 3px 1px silver;
+            border-radius: 5px;
+            border: 2px solid #99627A;
+            text-align: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .product h3{
+            font-weight: bolder;
+            padding: 14px 0px 14px 0px;
+        }
+        .product .quantity{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0px 14px 0px;
+            font-weight: bolder;
+        }
+        .product .increment-btn, .product .decrement-btn{
+            padding: 6px 18px 6px 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #99627A;
+        }
+        .addToCartBtn, .remove-btn, #placeOrderBtn{
+            display: grid;
+            font-weight: bold;
+            border: 2px solid #99627A;
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+        }
+        .product-image{
+            width: 135px;
+            height: 135px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 2px solid  #99627A;
+            display: block;
+            margin: auto;
+        }
+        .product-image img{
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        .showMPF{
+            position: fixed;
+            border-radius: 50%;
+            transform: translate(-50% -50%);
+            height: 45px;
+            width: 45px;
+            right: 5%;
+            bottom: 5%;
+            font-size: 24px;
+            display: none;
+        }
+        #cartSubtotal{
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 14px;
+        }
+        .order-details{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            gap: 4px;
+        }
+        .moreProductsForm{
+            padding: 24px;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            background: #C88EA7;
+            box-shadow: 1px 1px 3px 1px #99627A;
+            border-radius: 5px;
+            gap: 4px;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            animation-name: fade;
+            animation-direction: ease-in;
+            animation-duration: .75s;
+        }
+        @keyframes fade{
+            0%{
+                margin-top: 300px;
+            }
+            100%{
+                margin: 0px;
+            }
+        }
+        .moreProductsForm h2{
+            text-align: center;
+            padding: 0px 0px 10px 0px;
+        }
+        .moreProductsForm input{
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .moreProductsForm button{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #accountForm{
+            display: none;
+            padding: 24px;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            background: #C88EA7;
+            box-shadow: 1px 1px 3px 1px #99627A;
+            border-radius: 5px;
+            gap: 4px;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            animation-name: fade;
+            animation-direction: ease-in;
+            animation-duration: .75s;
+            gap: 8px;
+        }
+        #accountForm h2{
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        #accountForm form{
+            display: grid;
+            gap: 4px;
+        }
+        #accountForm input, #accountForm button{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        #pop-messages p{
+            position: fixed;
+            overflow: hidden;
+            transform: translate(-50%, -50%);
+            animation-name: fade;
+            animation-direction: ease-in;
+            animation-duration: .75s;
+            top: 85%;
+            left: 50%;
+            display: none;
+            background: #333;
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+            padding: 8px;
+            width: 75%;
+            color: #fff;
+        }
+        #userProfile{
+            position: fixed;
+            background: #C88EA7;
+            padding: 24px;
+            width: 75%;
+            transform: translate(-50%, -50%);
+            box-shadow: 1px 1px 3px 1px #99627A;
+            border-radius: 5px;
+            animation-name: fade;
+            animation-direction: ease-in;
+            animation-duration: .75s;
+            left: 50%;
+            top: 50%;
+            gap: 4px;
+        }
+        #userProfile button{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #userProfile a button{
+            width: 100%;
+        }
+        #userProfile p{
+            font-size: 20px;
+            text-align: center;
+            padding-bottom: 24px;
+            font-weight: bold;
+        }
+        .accountSettings{
+            display: grid;
+            gap: 4px;
+        }
+        @media screen and (min-width:720px){
+            #orderHistory ul{
+                grid-template-columns: 50% 50%;
+                justify-content: space-evenly;
+                padding: 8px;
+            }
+            .desk-two-col{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                justify-content: space-evenly;
+            }
+            #productListPanghimagas, #moreProducts{
+                grid-template-columns: 33.33% 33.33% 33.33%;
+                justify-content: space-evenly;
+                padding: 14px;
+            }
+            #productListPanghimagas .product-image, #moreProducts .product-image{
+                height: 175px;
+                width: 175px;
+            }
+            nav ul li a:hover{
+                background: #E7CBCB;
+            }
+            #cartItems{
+                grid-template-columns: 25% 25% 25% 25%;
+                padding: 24px;
+            }
+            #cart{
+                box-shadow: 1px 1px 3px 1px silver;
+                margin: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="javascript:void(0)" class="showAccount">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="userProfile">
+        <p><span id="username"></span></p>
+        <a href="cart.html">
+        <button id="myCart">My Cart</button>
+        </a>
+        <a href="order-history.html">
+        <button id="myOrderHistory">Order History</button>
+        </a>
+        <hr style="margin-top:10px;margin-bottom:10px">
+        <div class="accountSettings">
+        <button id="logoutBtn">Logout</button>
+        <button id="deleteAccountBtn">Delete Account</button>
+        </div>
+        <button id="closeModal" style="background:inherit;border: 2px solid #fff!important;margin-top:24px;display:grid!important;color:#fff">Close Modal</button>
+    </div>
+    
+    <div class="moreProductsForm">
+        <h2>Add Product</h2>
+        <input type="text" id="productName" placeholder="Product Name" required="required">
+        <input type="url" id="productImage" placeholder="Image URL" required="required">
+        <input type="number" id="productPrice" step="0.01" placeholder="Price" required="required">
+        <button id="addProductBtn">Add Product</button>
+        <span style="font-size:12px;padding:4px;text-align:center;"><strong>Note:</strong> Any misformed product (eg. Blank Image) will be deleted. You may follow this <a href="add-product-guide.html" target="_blank" style="color:#FFF;text-decoration:none;">guide</a> to avoid this from happening, thank you.</span>
+    </div>
+    <button class="showMPF">+</button>
+    
+    <div class="desk-two-col">
+    <div class="product-container">
+        <h2>Almusal</h2>
+        <div id="productListAlmusal"></div>
+    </div>
+    
+    <div class="product-container">
+        <h2>Lutong Ulam</h2>
+        <div id="productListLutongUlam"></div>
+    </div>
+    </div>
+    
+    <div class="product-container">
+        <h2>Panghimagas</h2>
+        <div id="productListPanghimagas"></div>
+    </div>
+
+    <div class="product-container">
+        <h2>More Products</h2>
+        <div id="moreProducts"></div>
+    </div>
+    
+    <div id="cart">
+        <h2>Cart</h2>
+        <ul id="cartItems"></ul>
+        <div id="cartSubtotal"></div>
+        <button id="placeOrderBtn">Place Order</button>
+    </div>
+    
+    <div class="product-container" id="orderHistoryContainer">
+        <h2>Order History</h2>
+    <div id="orderHistory">
+        <ul id="orderItems"></ul>
+    </div>
+    </div>
+    
+    <div id="accountForm">
+    <form id="registration">
+        <h2>Registration</h2>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <form id="login">
+        <h2>Login</h2>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <button id="closeForm" style="background:inherit;border: 2px solid #fff!important;margin-top:24px;color:#fff">Close Form</button>
+    </div>
+    
+    <div id="pop-messages">
+        <p id="message"></p>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

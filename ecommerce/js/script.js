@@ -150,7 +150,7 @@
                         document.getElementById('message').textContent = 'Logged-in Successfully!';
                         setTimeout(() => {
                             window.location.href = 'index.html';
-                            window.location.reload();
+                            window.location.reload(true);
                         }, 1000);
                     })
                     .catch(error => {
@@ -170,7 +170,7 @@
                         document.getElementById('message').textContent = 'Logged-out Successfully!';
                         setTimeout(() => {
                             window.location.href = 'index.html';
-                            window.location.reload();
+                            window.location.reload(true);
                         }, 1000);
                     auth.signOut()
                     .catch(error => {

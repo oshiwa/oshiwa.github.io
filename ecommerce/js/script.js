@@ -437,6 +437,7 @@
                     <img src="${item.product.image}" alt="${item.product.name}">
                     </div>
                     <h3 style='padding-bottom:14px;'>${item.product.name}</h3>
+                    <p>Price: ₱${item.product.price}</p>
                     <div class="quantity">
                     <button class="decrement-btn">-</button>
                     <span>${item.quantity}</span>

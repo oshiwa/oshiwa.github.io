@@ -168,9 +168,8 @@
                 () => {
                     document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = 'Logged-out Successfully!';
-                        window.location.href = 'index.html';
                         setTimeout(() => {
-                            window.location.reload(true);
+                            window.location.href = 'index.html';
                         }, 1000);
                     auth.signOut()
                     .catch(error => {
@@ -178,7 +177,7 @@
                         document.getElementById('message').textContent = (error.message);
                         setTimeout(() => {
                             window.location.reload(true);
-                        }, 1000);
+                        }, 100);
                     });
                 });
             // Delete account button event listener
@@ -201,8 +200,7 @@
                         document.getElementById('message').textContent = 'Account deleted successfully!';
                         setTimeout(() => {
                             window.location.href = 'index.html';
-                            window.location.reload(true);
-                        }, 1000);
+                        }, 100);
                             })
                             .catch(error => {
                                 document.getElementById('message').style.display = 'grid';

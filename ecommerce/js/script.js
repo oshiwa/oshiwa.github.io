@@ -148,8 +148,8 @@
                         loginForm.reset();
                         document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = 'Logged-in Successfully!';
+                        window.location.href = 'index.html';
                         setTimeout(() => {
-                            window.location.href = 'index.html';
                             window.location.reload(true);
                         }, 1000);
                     })
@@ -168,8 +168,8 @@
                 () => {
                     document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = 'Logged-out Successfully!';
+                        window.location.href = 'index.html';
                         setTimeout(() => {
-                            window.location.href = 'index.html';
                             window.location.reload(true);
                         }, 1000);
                     auth.signOut()

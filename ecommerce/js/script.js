@@ -170,14 +170,15 @@
                         document.getElementById('message').textContent = 'Logged-out Successfully!';
                         setTimeout(() => {
                             window.location.href = 'index.html';
-                        }, 1000);
+                        }, 100);
+                        window.location.reload(true);
                     auth.signOut()
                     .catch(error => {
                         document.getElementById('message').style.display = 'grid';
                         document.getElementById('message').textContent = (error.message);
                         setTimeout(() => {
                             window.location.reload(true);
-                        }, 100);
+                        }, 1000);
                     });
                 });
             // Delete account button event listener

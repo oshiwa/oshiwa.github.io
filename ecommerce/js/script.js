@@ -52,12 +52,13 @@ smp.addEventListener('click', () => {
 // Initialize Firebase
 const firebaseConfig = {
     // Firebase configuration
-    apiKey: "AIzaSyAKdN_nMo71p-3Ik2oZPdaRhgYJhcvy5sM",
-    authDomain: "luto-ni-fred.firebaseapp.com",
-    projectId: "luto-ni-fred",
-    storageBucket: "luto-ni-fred.appspot.com",
-    messagingSenderId: "170332137811",
-    appId: "1:170332137811:web:35901663b3c28eb2c2d9a6"
+    apiKey: "AIzaSyCgQfK-pd9mmSIga3VTLTTtTOe0qFQQJJI",
+  authDomain: "web-store-39522.firebaseapp.com",
+  projectId: "web-store-39522",
+  storageBucket: "web-store-39522.appspot.com",
+  messagingSenderId: "399674132987",
+  appId: "1:399674132987:web:7e589e8e56330272d6e35e",
+  measurementId: "G-6BGYJHMLGF"
 };
 firebase.initializeApp(firebaseConfig);
 let cart = [];
